@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1598" height="366" version="1.1" viewBox="0 0 1598 366" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <rect y="-.66669" width="1600" height="366.67" fill="#fffbaa" stroke-width=".63828"/>
+ <g transform="matrix(1 0 0 .76905 -25.982 -324.7)" opacity=".8">
+  <polygon points="957 450 539 900 1396 900" fill="#38b065"/>
+  <polygon points="957 450 872.9 900 1396 900" fill="#208669"/>
+  <polygon points="-60 900 398 662 816 900" fill="#40c565"/>
+  <polygon points="337 900 398 662 816 900" fill="#288862"/>
+  <polygon points="1203 546 1552 900 876 900" fill="#55ce6b"/>
+  <polygon points="1203 546 1552 900 1162 900" fill="#32895c"/>
+  <polygon points="641 695 886 900 367 900" fill="#6ad774"/>
+  <polygon points="587 900 641 695 886 900" fill="#3c8959"/>
+  <polygon points="1710 900 1401 632 1096 900" fill="#80df80"/>
+  <polygon points="1710 900 1401 632 1365 900" fill="#468958"/>
+  <polygon points="1210 900 971 687 725 900" fill="#9ee696"/>
+  <polygon points="943 900 1210 900 971 687" fill="#52885a"/>
+ </g>
+</svg>
