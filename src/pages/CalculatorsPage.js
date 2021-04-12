@@ -6,19 +6,33 @@ import Calculator from './Calculator';
 const styles = theme => ({
     layout: {
         width: 'auto',
-        marginLeft: theme.spacing.unit * 3,
-        marginRight: theme.spacing.unit * 3,
-        [theme.breakpoints.up(900 + theme.spacing.unit * 3 * 2)]: {
-            width: 900,
-            marginLeft: 'auto',
-            marginRight: 'auto',
-        },
+        marginLeft: theme.spacing(3),
+        marginRight: theme.spacing(3),
+        // [theme.breakpoints.up(900 + theme.spacing(2)*3)]: {
+        //     width: 900,
+        //     marginLeft: 'auto',
+        //     marginRight: 'auto',
+        // },
     },
     heroContent: {
-        maxWidth: 1000,
         margin: '0 auto',
-        padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 8}px`,
+        padding: `${theme.spacing(8)}px 0 ${theme.spacing(8)}px`,
     },
+    title:{
+        fontSize: '4rem',
+        '@media (min-width:600px)': {
+            fontSize: '3.4rem',
+          },
+          '@media (max-width:400px)': {
+            fontSize: '2.8rem',
+          },
+        '@media (max-width:300px)': {
+            fontSize: '2.3rem',
+          },
+          '@media (max-width:200px)': {
+            fontSize: '1.5rem',
+          },
+    }
 });
 
 window.__MUI_USE_NEXT_TYPOGRAPHY_VARIANTS__ = true;
@@ -104,9 +118,9 @@ class CalculatorPage extends Component {
             <div className={classes.layout}>
                 {/* Hero unit */}
                 <div className={classes.heroContent}>
-                    <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+                    <Typography  className={classes.title} component="h1"  align="center" color="textPrimary" gutterBottom>
                         Calculators
-                        </Typography>
+                    </Typography>
                     <Typography variant="h6" align="justify" color="textSecondary" component="p">
                         Quickly research financial question to make weighted decision, it is the primary goal of Calc U Rator.
                         Each calculator is super simple to use and guides your throght sometimes complicated financial concepts.
@@ -114,7 +128,7 @@ class CalculatorPage extends Component {
                         Select a problem you want to solve and get the results right away!
                     </Typography>
                 </div>
-                <Grid container spacing={40} alignItems="flex-end">
+                <Grid container spacing={7} alignItems="flex-end">
                     {calculators.map((calculator, index) => (
                         // Enterprise card is full width at sm breakpoint
                         <Grid item key={index} xs={12} sm={6} md={4}>

@@ -8,7 +8,7 @@ import MUIDataTable from "mui-datatables";
 
 const styles = theme => ({
     noData: {
-        padding: theme.spacing.unit * 2,
+        padding: theme.spacing(2),
     },
     tableCell: {
         padding: 1

@@ -4,10 +4,10 @@ import { SlightlyFrowningFace } from "../primitives/Emoji";
 
 const styles = theme => ({
     root: {
-        paddingTop: theme.spacing.unit * 3
+        paddingTop: theme.spacing(3)
     },
     paragraphs: {
-        margin: theme.spacing.unit * 2
+        margin: theme.spacing(2)
     }
 });
 

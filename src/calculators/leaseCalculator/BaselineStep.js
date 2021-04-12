@@ -13,10 +13,10 @@ import { copyApply } from "../../utils/apply";
 
 const styles = theme => ({
     formControl: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(1),
     },
     selectEmpty: {
-        marginTop: theme.spacing.unit,
+        marginTop: theme.spacing(1),
     },
 });
 
@@ -34,14 +34,14 @@ class BaselineStep extends Component {
                 <Table>
                     <TableBody>
                         <TableRow>
-                            <TableCell component="th" scope="row" padding="dense">Total for lease</TableCell>
-                            <TableCell padding="dense">
+                            <TableCell component="th" scope="row" padding="default">Total for lease</TableCell>
+                            <TableCell padding="default">
                                 <MoneyFormat id="cy-totalForLease" value={model.calculateTotalForLease()} />
                             </TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell component="th" scope="row" padding="dense">Monthly payment if $0 down</TableCell>
-                            <TableCell padding="dense">
+                            <TableCell component="th" scope="row" padding="default">Monthly payment if $0 down</TableCell>
+                            <TableCell padding="default">
                                 <MoneyFormat id="cy-monthlyPaymentIfNoDownpayment" value={model.calculateMonthlyPaymentIfNoDownpayment()} />
                             </TableCell>
                         </TableRow>
@@ -86,7 +86,7 @@ class BaselineStep extends Component {
                             }}>
                             {
                                 [12, 24, 36, 48].map(m => 
-                                    <MenuItem id={makeCypressId("monthInLeaseValue", m)} value={m}>{`${m} Month`}</MenuItem>
+                                    <MenuItem key={m} id={makeCypressId("monthInLeaseValue", m)} value={m}>{`${m} Month`}</MenuItem>
                                 )
                             }
                         </Select>

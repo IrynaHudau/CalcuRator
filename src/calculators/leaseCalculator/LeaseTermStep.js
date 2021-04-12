@@ -9,7 +9,7 @@ import { copyApply } from "../../utils/apply";
 
 const styles = theme => ({
     formControl: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing(1),
     }
 });
 

@@ -16,7 +16,7 @@ class CarLoanCalculatorPage extends Component {
     render() {
         return (
             <Grid container alignItems="flex-start" justify="center">
-                <Grid item xs={12} sm={8} md={6}>
+                <Grid item xs={10} sm={8} md={6}>
                     <CarLoanCalculator data={this.props.st} onDataChanged={this.props.onCarLoanCalculatorDataChaged} />
                 </Grid>
             </Grid>

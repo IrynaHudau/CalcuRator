@@ -37,19 +37,19 @@ class Layout extends Component {
         const { classes } = this.props;
         return(
             <React.Fragment>
-                <CssBaseline />
-                <MuiThemeProvider theme={THEME}>
-                    <div className={classes.appRoot}>
-                        <Aux >
-                            <AppMenu></AppMenu>
-                            <main className={classes.appContent}>
-                                {this.props.children}
-                            </main>
-                            <Footer></Footer>
-                        </Aux>
-                    </div>
-                </MuiThemeProvider>
-            </React.Fragment >
+            <CssBaseline />
+            <MuiThemeProvider theme={THEME}>
+                <div className={classes.appRoot}>
+                    <Aux >
+                        <AppMenu></AppMenu>
+                        <main className={classes.appContent}>
+                            {this.props.children}
+                        </main>
+                        <Footer></Footer>
+                    </Aux>
+                </div>
+            </MuiThemeProvider>
+        </React.Fragment >
         )
     }
 }

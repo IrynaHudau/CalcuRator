@@ -10,10 +10,10 @@ body {
   background-attachment:fixed;
 }
 
-body {
+/* body {
   margin: 0;
   padding: 0; 
-}
+} */
 
 footer{
    background-image: url(./assets/Footer.svg);

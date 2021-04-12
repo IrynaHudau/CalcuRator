@@ -8,9 +8,8 @@ const styles = theme => ({
         padding: '48px',
     },
     text: {
-        textAlign: 'center',
-        marginRight: theme.spacing.unit * 2,
-        marginLeft: theme.spacing.unit * 2
+        marginRight: theme.spacing(2),
+        marginLeft: theme.spacing(2)
     },
 });
 
@@ -23,9 +22,9 @@ class Footer extends Component{
         const classes = this.props.classes;
         return(
             <footer className={classes.footerRoot} >
-                <div>
+                <div style={{ textAlign: 'center'}}>
                     <br />
-                    <Typography variant="caption" gutterBottom align="center" className={classes.text}>
+                    <Typography variant="caption" gutterBottom className={classes.text}>
                         Fearless Future LLC © 2020
                     </Typography>
                 </div>

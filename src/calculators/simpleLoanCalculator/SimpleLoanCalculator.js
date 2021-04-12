@@ -15,28 +15,27 @@ import { copyApply } from "../../utils/apply";
 
 const styles = theme => ({
     root: {
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
+        paddingTop: theme.spacing(2),
+        paddingBottom: theme.spacing(2),
     },
     paperContent: {
-        padding: theme.spacing.unit,
-        paddingRight: theme.spacing.unit * 2,
+        padding: theme.spacing(1),
+        paddingRight: theme.spacing(2),
     },
     formControl: {
-        margin: theme.spacing.unit
+        margin: theme.spacing(1)
     },
     selectEmpty: {
-        marginTop: theme.spacing.unit,
+        marginTop: theme.spacing(1),
     },
     detailsSwitch: {
         align: "right"
     },
     resultsHeader: {
-        paddingLeft: theme.spacing.unit * 2,
-        paddingRight: theme.spacing.unit * 2,
-        paddingTop: theme.spacing.unit * 2
+        paddingLeft: theme.spacing(2),
+        paddingRight: theme.spacing(2),
+        paddingTop: theme.spacing(2)
     },
-    // Flex explained https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox
     resultContainer: {
         display: "flex",
         flexDirection: "row",
@@ -44,11 +43,11 @@ const styles = theme => ({
     },
     resultTable: {
         flex: "100 300px",
-        marginRight: theme.spacing.unit,
+        marginRight: theme.spacing(1),
     },
     resultChart: {
         flex: "1 300px",
-        margin: theme.spacing.unit,
+        margin: theme.spacing(1),
     }
 });
 
@@ -56,7 +55,9 @@ class SimpleLoanCalculator extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showDetails: false
+            showDetails: false,
+            widthWindow: 0, 
+            heightWindow: 0 
         };
         this.handleShowDetailsChange = this.handleShowDetailsChange.bind(this);
         this.handleTotalNeedChange = this.handleTotalNeedChange.bind(this);
@@ -64,6 +65,19 @@ class SimpleLoanCalculator extends Component {
         this.handleDownpaymentChange = this.handleDownpaymentChange.bind(this);
         this.handleDownpaymentPercentChange = this.handleDownpaymentPercentChange.bind(this);
     }
+
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener("resize", this.updateWindowDimensions);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions = () => {
+        this.setState({ widthWindow: window.innerWidth, heightWindow: window.innerHeight });
+    };
 
     render() {
         const { classes } = this.props;
@@ -127,16 +141,16 @@ class SimpleLoanCalculator extends Component {
     renderHeader(classes) {
         return (<Grid
             container
-            spacing={32}
+            spacing={10}
             alignItems="center"
             direction="row"
             justify="space-between">
-            <Grid item xs={8}>
+            <Grid item xs={6}>
                 <Typography variant="h5" align="center" gutterBottom>
                     {this.props.mode === SIMPLE_LOAN_MODE.Mortgage ? "Mortgage" : "Simple Loan"}
                 </Typography>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
                 <FormControlLabel
                     control={
                         <Switch
@@ -253,20 +267,20 @@ class SimpleLoanCalculator extends Component {
         return (<Table>
             <TableBody>
                 <TableRow>
-                    <TableCell component="th" scope="row" padding="dense">Monthly Payment</TableCell>
-                    <TableCell padding="dense" align="right">
+                    <TableCell component="th" scope="row" padding="none">Monthly Payment</TableCell>
+                    <TableCell padding="none" align="right">
                         <MoneyFormat id="montlyPayment" fixedDecimalScale value={model.getMontlyPayment()} />
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell component="th" scope="row" padding="dense">Total Interest Payed</TableCell>
-                    <TableCell padding="dense" align="right">
+                    <TableCell component="th" scope="row" padding="none">Total Interest Payed</TableCell>
+                    <TableCell padding="none" align="right">
                         <MoneyFormat id="totalInterestAccrued" fixedDecimalScale value={model.getTotalInterestAccrued()} />
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell component="th" scope="row" padding="dense">Total Payment for the loan life</TableCell>
-                    <TableCell padding="dense" align="right">
+                    <TableCell component="th" scope="row" padding="none">Total Payment for the loan life</TableCell>
+                    <TableCell padding="none" align="right">
                         <MoneyFormat id="totalPaymnetForLoanLifetime" fixedDecimalScale value={model.getTotalPaymnetForLoanLifetime()} />
                     </TableCell>
                 </TableRow>
@@ -296,7 +310,11 @@ class SimpleLoanCalculator extends Component {
                 value: downpayment
             },
         ];
-        return (<PieChart id="resultsChart" data={data} width={300} height={300} />);
+        let w = 300;
+        if(this.state.widthWindow <= 400){
+            w = 150;
+        }
+        return (<PieChart id="resultsChart" data={data} width={w} height={w} />);
     }
 
     handleDataChange = name => event => {

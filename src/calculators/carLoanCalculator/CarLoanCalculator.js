@@ -20,18 +20,18 @@ import { copyApply } from "../../utils/apply";
 
 const styles = theme => ({
     root: {
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
+        paddingTop: theme.spacing(2),
+        paddingBottom: theme.spacing(2),
     },
     paperContent: {
-        padding: theme.spacing.unit,
-        paddingRight: theme.spacing.unit * 2,
+        padding: theme.spacing(1),
+        paddingRight: theme.spacing(2),
     },
     formControl: {
-        margin: theme.spacing.unit
+        margin: theme.spacing(1)
     },
     selectEmpty: {
-        marginTop: theme.spacing.unit,
+        marginTop: theme.spacing(1),
     },
 });
 

@@ -6,8 +6,8 @@ const styles = theme => ({
     root: {
         flexGrow: 1,
         overflow: 'hidden',
-        padding: `0 ${theme.spacing.unit * 3}px`,
-        paddingTop: theme.spacing.unit * 2,
+        padding: `0 ${theme.spacing(3)}px`,
+        paddingTop: theme.spacing(2),
 
         backgroundImage: `url(${bigDinoLogo})`,
         backgroundPosition: '120% 30%',
@@ -15,6 +15,7 @@ const styles = theme => ({
 
         backgroundSize: '50% 50%',
         backgroundRepeat: 'no-repeat',
+        height: '1000px'
     },
 });
 
@@ -23,7 +24,7 @@ class AboutPage extends Component {
         const { classes } = this.props;
         return (
             <div className={classes.root}>
-            <Grid container wrap="nowrap" justify="space-around" alignItems="center" spacing={24}>
+            <Grid container wrap="nowrap" justify="space-around" alignItems="center" spacing={10}>
                 <Grid item xs sm={6}>
                     <Typography variant="h6" align="center" gutterBottom>
                         Our Mission

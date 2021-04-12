@@ -18,23 +18,23 @@ const styles = theme => ({
     root: {
         //width: '100%',
         //...theme.mixins.gutters(),
-        paddingTop: theme.spacing.unit * 2,
-        paddingBottom: theme.spacing.unit * 2,
+        paddingTop: theme.spacing(2),
+        paddingBottom: theme.spacing(2),
     },
     stepContent: {
-        padding: theme.spacing.unit * 2,
-        paddingRight: theme.spacing.unit * 3,
+        padding: theme.spacing(2),
+        paddingRight: theme.spacing(3),
     },
     backButton: {
-        marginTop: theme.spacing.unit * 2,
-        marginRight: theme.spacing.unit,
+        marginTop: theme.spacing(2),
+        marginRight: theme.spacing(1),
     },
     nextButton: {
-        marginTop: theme.spacing.unit * 2,
+        marginTop: theme.spacing(2),
     },
     instructions: {
-        marginTop: theme.spacing.unit,
-        marginBottom: theme.spacing.unit,
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(1),
     },
 });
 
@@ -96,7 +96,6 @@ class LeaseCalculator extends React.Component {
                 </Typography>
                 <Typography className={classes.instructions}>
                     Press "Reset" to start over.
-                    {/* TODO: Place for ADDS */}
                 </Typography>
                 <Button id="cy-buttonReset" onClick={this.handleReset}>Reset</Button>
             </div>) : (

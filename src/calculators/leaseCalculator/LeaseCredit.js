@@ -10,11 +10,11 @@ import { copyApply } from '../../utils/apply';
 
 const styles = theme => ({
     formControl: {
-        marginTop: theme.spacing.unit
+        marginTop: theme.spacing(1)
     },
     creditSelctor: {
-        marginTop: theme.spacing.unit,
-        marginBottom: theme.spacing.unit * 2
+        marginTop: theme.spacing(1),
+        marginBottom: theme.spacing(2)
     },
 });
 
@@ -80,7 +80,7 @@ class LeaseCredit extends Component {
                             id: 'credit-score-level',
                         }}>
                         {
-                            creditScoreLevels.map(l => <MenuItem id={makeCypressId("creditScore", l)} value={l}>{l}</MenuItem>)
+                            creditScoreLevels.map(l => <MenuItem key={l} id={makeCypressId("creditScore", l)} value={l}>{l}</MenuItem>)
                         }
                     </Select>
                     <FormHelperText>An estimate of how good is your credit score.</FormHelperText>
