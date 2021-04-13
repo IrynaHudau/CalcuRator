@@ -25,7 +25,7 @@ class Footer extends Component{
                 <div style={{ textAlign: 'center'}}>
                     <br />
                     <Typography variant="caption" gutterBottom className={classes.text}>
-                        Fearless Future LLC © 2020
+                        IrynaHudava © 2020
                     </Typography>
                 </div>
             </footer>

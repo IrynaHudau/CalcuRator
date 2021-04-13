@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-import each from "jest-each";
+import each from 'jest-each';
 
 context('Window', () => {
     beforeEach(() => {
