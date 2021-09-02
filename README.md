@@ -1,3 +1,5 @@
+[![Custom badge](https://img.shields.io/static/v1?logoColor=green&label=Run%20App&logo=Deno&message=CarcURaptor&color=brightgreen)](https://calcuraptor.herokuapp.com/calculators)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
